@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CRM Contractor | Custom Systems for Homeschool Families and Small Businesses</title>
+<meta name="description" content="Custom Google-based systems for homeschool families, coaches, property managers and small businesses. Client records, schedules, budgets, reminders and dashboards, built around how you already work. One-time price, no monthly fees.">
+<meta property="og:title" content="The CRM Contractor">
+<meta property="og:description" content="Custom Google-based systems for homeschool families, coaches, property managers and small businesses. Client records, schedules, budgets, reminders and dashboards, built around how you already work. One-time price, no monthly fees.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://crmcontractor.github.io/">
+<meta name="theme-color" content="#C2410C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23C2410C%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3ECD%3C%2Ftext%3E%3C%2Fsvg%3E">
+<script>var CRM_API="https://script.google.com/macros/s/AKfycbwN3zG2cz3SfzKl7y6UpNmg8o5lvs_zXY1-FQsiYQW87PvbvsfDhU2IftqAyW0o2nSTrQ/exec";window.google={script:{run:(function(){function R(s,f){this.s=s;this.f=f}R.prototype.withSuccessHandler=function(fn){return new R(fn,this.f)};R.prototype.withFailureHandler=function(fn){return new R(this.s,fn)};R.prototype.publicApi=function(api,data){var self=this;var p=api==="site"?fetch(CRM_API+"?page=api&action=site").then(function(r){return r.json()}):fetch(CRM_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({api:api,data:data||{}})}).then(function(r){return r.json()});p.then(function(o){if(o&&o.error){if(self.f)self.f(new Error(o.error))}else if(self.s)self.s(o)}).catch(function(e){if(self.f)self.f(e)})};return new R()})()}};</script>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+<style>
+:root{--bg:#FFF7EF;--card:#FFFFFF;--ink:#2F2B26;--soft:#6F675C;--tan:#F6D9C2;--tan2:#FCEBDD;--line:#F0D8C4;--tanDeep:#A88A5C;--teal:#C2410C;--tealDark:#7C2D12;--tealSoft:#FFE8D6;--tealMid:#F4A261;--green:#E4F4E6;--greenInk:#2F7A45;--amber:#FBEFD6;--amberInk:#8A6420;--rose:#FBE6E1;--roseInk:#A2463A;--display:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;--body:"Nunito Sans","Segoe UI",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+[hidden]{display:none!important}
+a{color:var(--teal)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.15;text-wrap:balance;color:var(--ink)}
+p{margin:0}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.muted{color:var(--soft)}
+.small{font-size:13px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid transparent;border-radius:10px;padding:10px 16px;font:700 15px var(--body);cursor:pointer;text-decoration:none;background:var(--teal);color:#fff;transition:background .15s}
+.btn:hover{background:var(--tealDark)}
+.btn.ghost{background:var(--card);color:var(--teal);border-color:var(--tealMid)}
+.btn.ghost:hover{background:var(--tealSoft)}
+.btn.tan{background:var(--tan);color:var(--ink)}
+.btn.tan:hover{background:#E0D2B8}
+.btn.sm{padding:6px 11px;font-size:13px;border-radius:8px}
+.btn:disabled{opacity:.55;cursor:default}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+label.f{display:grid;gap:5px;font-size:13px;font-weight:700;color:var(--soft)}
+input,select,textarea{font:15px var(--body);color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;width:100%}
+textarea{min-height:84px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:700;font-size:15px;color:var(--ink)}
+.check input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--teal)}
+.pill{display:inline-block;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;background:var(--tan2);color:var(--ink);white-space:nowrap}
+.p-teal{background:var(--tealSoft);color:var(--tealDark)}
+.p-green{background:var(--green);color:var(--greenInk)}
+.p-amber{background:var(--amber);color:var(--amberInk)}
+.p-rose{background:var(--rose);color:var(--roseInk)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.between{justify-content:space-between}
+.policy{background:var(--tealSoft);border:1px solid var(--tealMid);border-radius:12px;padding:14px 16px;font-size:14px}
+.bar{height:10px;border-radius:6px;background:var(--tan);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--teal);border-radius:6px}
+.toast{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;font-weight:700;z-index:99;max-width:calc(100% - 32px)}
+.toast.err{background:var(--roseInk)}
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);background:var(--tan2);white-space:nowrap}
+tbody tr.click{cursor:pointer}
+tbody tr.click:hover{background:var(--tan2)}
+.stars{color:#D9A23A;letter-spacing:2px}
+.empty{padding:26px;text-align:center;color:var(--soft);font-size:14px}
+.loading{padding:60px 16px;text-align:center;color:var(--soft)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:18px}
+.brand small{display:block;font-family:var(--body);font-weight:600;font-size:12px;color:var(--soft)}
+.mark{width:36px;height:36px;border-radius:10px;background:var(--tealSoft);border:2px solid var(--tealMid);display:grid;place-items:center;color:var(--teal);font-weight:800;font-size:14px;flex:none}
+.links{display:flex;gap:20px;font-weight:700;font-size:15px}
+.links a{color:var(--soft);text-decoration:none}
+.links a:hover{color:var(--teal)}
+@media (max-width:860px){.links{display:none}}
+.hero{padding-block:56px 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(36px,5.4vw,60px);font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.lede{font-size:19px;color:var(--soft);margin-top:18px;max-width:40ch}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px;padding-top:18px;border-top:1px dashed var(--tan)}
+.facts b{display:block;font:800 26px var(--display);color:var(--teal)}
+.facts span{font-size:14px;color:var(--soft)}
+.mock{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(120,96,60,.12);overflow:hidden;min-width:0}
+.mock .mt{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--tan2)}
+.mock .mt i{width:10px;height:10px;border-radius:50%;background:var(--tan)}
+.mock .mn{display:flex;gap:4px;padding:8px 12px;border-bottom:1px solid var(--line);overflow:hidden}
+.mock .mn span{font-size:12px;font-weight:800;padding:5px 9px;border-radius:8px;color:var(--soft);white-space:nowrap}
+.mock .mn span.on{background:var(--tealSoft);color:var(--teal)}
+.mock .mb{padding:14px;display:grid;gap:10px}
+.mk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mk div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+.mk span{display:block;font-size:11px;font-weight:700;color:var(--soft)}
+.mk b{font:800 22px var(--display)}
+.mbars{display:flex;align-items:flex-end;gap:7px;height:90px;padding:8px 10px;border:1px solid var(--line);border-radius:10px}
+.mbars i{flex:1;background:var(--tealMid);border-radius:5px 5px 2px 2px}
+.mbars i:nth-child(even){background:var(--tan)}
+.mrows div{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:7px 2px;border-bottom:1px solid var(--line)}
+.mrows div:last-child{border-bottom:0}
+section{padding-block:64px}
+section.alt{background:var(--card);border-block:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.head h2{font-size:clamp(28px,3.8vw,42px);font-weight:800;letter-spacing:-.02em;margin-top:6px}
+.head p{max-width:46ch;color:var(--soft)}
+.aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.aud .card h3{font-size:18px;margin-bottom:6px}
+.aud .card p{font-size:15px;color:var(--soft)}
+.aud .card .eg{margin-top:10px;font-size:13px;font-weight:700;color:var(--teal)}
+.holds{display:flex;flex-wrap:wrap;gap:10px}
+.holds span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:700;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 20px 20px 70px;position:relative;min-width:0}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:18px;width:36px;height:36px;border-radius:50%;background:var(--tealSoft);border:2px solid var(--tealMid);color:var(--teal);font:800 16px var(--display);display:grid;place-items:center}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p{font-size:15px;color:var(--soft)}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.work h3{font-size:17px;margin:14px 0 4px}
+.work p{font-size:14px;color:var(--soft)}
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.badges .card b{display:block;font:800 34px var(--display);color:var(--teal)}
+.badges .card span{font-size:14px;color:var(--soft)}
+.revs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.rev p.t{font-size:16px;margin-top:8px}
+.rev .who{margin-top:12px;font-weight:800;font-size:14px}
+.rev .who span{display:block;font-weight:600;color:var(--soft)}
+.start{display:grid;grid-template-columns:1fr 1.25fr;gap:32px;align-items:start}
+@media (max-width:900px){.start{grid-template-columns:1fr}}
+.form{display:grid;gap:14px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.form .two{grid-template-columns:1fr}}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px 14px}
+.feat label{display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600;color:var(--ink)}
+.feat input{width:17px;height:17px;accent-color:var(--teal)}
+.done{background:var(--green);border:1px solid #BFE3C6;border-radius:14px;padding:22px}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.svc .card h3{font-size:18px;margin:12px 0 6px}
+.svc .card p{font-size:15px;color:var(--soft)}
+.ic{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--tealSoft);color:var(--teal);font-size:20px;font-weight:800}
+.shot{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(120,96,60,.12);min-width:0}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:12px 16px;font-size:14px;color:var(--soft);border-top:1px solid var(--line)}
+.shot figcaption b{display:block;color:var(--ink);font-size:16px;font-family:var(--display);margin-bottom:2px}
+.hero-shot figcaption{font-size:13px}
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.gal .g-wide{grid-column:1/-1}
+.gal .shot{cursor:zoom-in;transition:transform .2s}
+.gal .shot:hover{transform:translateY(-3px)}
+@media (max-width:760px){.gal{grid-template-columns:1fr}}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.creds span{background:var(--tealSoft);color:var(--tealDark);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 18px}
+.faq summary{cursor:pointer;font:700 17px var(--display);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 16px;color:var(--soft)}
+.zoom{position:fixed;inset:0;background:rgba(47,43,38,.8);display:flex;align-items:center;justify-content:center;padding:20px;z-index:60;cursor:zoom-out}
+.zoom img{max-width:100%;max-height:100%;border-radius:12px;background:#fff}
+footer{padding-block:36px;border-top:1px solid var(--line);font-size:14px;color:var(--soft)}
+
+.hero{background:radial-gradient(ellipse at 88% 18%,#b8ded8 0,transparent 50%),linear-gradient(120deg,#fffdf9,#f1e3cf);padding-block:clamp(48px,8vw,100px)}
+.hero h1,.head h2,#about h2,#start h2{font-family:Georgia,serif;letter-spacing:-.035em}
+.hero h1{color:#173d3a}
+header.top{background:rgba(255,255,255,.96)}
+#services{background:#fffdf8}
+#services .card:nth-child(3n+1){background:#e3f3f0}
+#services .card:nth-child(3n+2){background:#f7ecdb}
+#services .card,#work .shot{box-shadow:0 12px 28px rgba(26,65,60,.08)}
+#work{background:linear-gradient(155deg,#edf7f5,#fff 48%,#f7ecdb)}
+#work .shot{min-width:0}
+#work .shot img,.hero-shot img,.story-preview img{display:block;width:100%;height:auto;aspect-ratio:19/11;object-fit:contain}
+#work .feature-preview{border-top:4px solid #26766f}
+#work .feature-preview:hover{box-shadow:0 16px 34px rgba(26,65,60,.17)}
+.story-preview{margin:18px 0 0}
+#start{background:linear-gradient(120deg,#d7eeea,#f6eddf)}
+
+#pricing{background:linear-gradient(135deg,#f5ebdb,#fff 52%,#e3f3f0);scroll-margin-top:75px}
+.price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:820px){.price-grid{grid-template-columns:1fr}}
+.price-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px;box-shadow:0 12px 28px rgba(26,65,60,.08)}
+.price-card h3,.package-price{font-family:Georgia,serif}
+.package-price{font-size:clamp(28px,4vw,40px);font-weight:700;color:#174e49}
+.featured-price{border:2px solid #26766f;background:#f4fbfa}
+.price-card ul{padding-left:20px;margin:6px 0 16px}
+.price-card li+li{margin-top:6px}
+.price-card .btn{margin-top:auto}
+#pricing .price-grid{gap:12px}
+#pricing .price-card{padding:14px;gap:6px}
+#pricing .package-price{font-size:clamp(24px,3vw,32px);line-height:1.15}
+#pricing .price-card details{width:100%;padding:0;border:0;background:transparent;margin:3px 0 8px}
+#pricing .price-card details summary{color:#236c65;cursor:pointer;font-weight:700}
+#pricing .price-card details p{margin-top:6px}
+#pricing .prebuilt-head{margin:26px 0 12px}
+#pricing .prebuilt-head h2{font-size:clamp(22px,3vw,30px)}
+@media(min-width:821px){#pricing .prebuilt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+</style>
+<header class="top"><div class="wrap nav">
+  <a class="brand" href="#top"><span class="mark">CD</span><span>The CRM Contractor<small>by Deborah Crutcher</small></span></a>
+  <nav class="links" aria-label="Main"><a href="#services">Services</a><a href="#work">My Work</a><a href="#about">About Me</a><a href="#how">How It Works</a><a href="#pricing">Pricing</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></nav>
+  <a class="btn sm" href="#start">Start Your Project</a>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap hero-grid">
+  <div>
+    <p class="eyebrow">Custom systems for real life and real business</p>
+    <h1 style="margin-top:12px">Everything you keep track of, <em>finally in one place.</em></h1>
+    <p class="lede">I build custom systems for homeschool families, coaches, property managers, travel professionals and small businesses. Client records, schedules, budgets, training, reminders and more, all organized your way.</p>
+    <div class="ctas"><a class="btn" href="#start">Start Your Intake</a><a class="btn ghost" id="heroBook" target="_blank" rel="noopener" href="#start">Book a Free Consultation</a></div>
+    <div class="heroMe"><img data-deb alt="Deborah Crutcher"><span><b>Hi, I’m Deborah.</b> A homeschool mom who builds the systems I wish I’d had.</span></div><div class="facts"><div><b>20+</b><span>years in operations</span></div><div><b>Free</b><span>30-minute consultation</span></div><div><b>Watch</b><span>your system being built</span></div></div>
+  </div>
+  <figure class="shot hero-shot"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22760%22%20height%3D%22440%22%20viewBox%3D%220%200%20760%20440%22%3E%3Crect%20width%3D%22760%22%20height%3D%22440%22%20fill%3D%22%23f8f5ef%22%2F%3E%3Crect%20width%3D%22760%22%20height%3D%2292%22%20fill%3D%22%23164d49%22%2F%3E%3Cg%20font-family%3D%22Arial%22%3E%3Ctext%20x%3D%2230%22%20y%3D%2236%22%20font-size%3D%2214%22%20fill%3D%22%23ffffff%22%3ESYSTEM%20PREVIEW%20%20%2F%20%20SAMPLE%20DATA%3C%2Ftext%3E%3Ctext%20x%3D%2230%22%20y%3D%2269%22%20font-size%3D%2230%22%20font-weight%3D%22bold%22%20fill%3D%22%23ffffff%22%3ESenior%20Care%20Operations%20Hub%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23bee8dc%22%2F%3E%3Ctext%20x%3D%2246%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3ECurrent%20census%3C%2Ftext%3E%3Ctext%20x%3D%2246%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E18%3C%2Ftext%3E%3Crect%20x%3D%22268%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23f7dda4%22%2F%3E%3Ctext%20x%3D%22284%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3EOpen%20rooms%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E8%3C%2Ftext%3E%3Crect%20x%3D%22506%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23e3ecd0%22%2F%3E%3Ctext%20x%3D%22522%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3ENew%20referrals%3C%2Ftext%3E%3Ctext%20x%3D%22522%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E3%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22236%22%20width%3D%22700%22%20height%3D%22174%22%20rx%3D%2212%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2249%22%20y%3D%22281%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3ERoom%20availability%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22259%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23bee8dc%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22280%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EUpdated%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22333%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EReferral%20intake%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22311%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23f7dda4%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22332%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EIn%20review%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22385%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EMonthly%20billing%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22363%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23e3ecd0%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22384%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EReady%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Senior Care Operations Hub sample dashboard"><figcaption>Senior Care Operations Hub · Sample data</figcaption></figure>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">What I build</p><h2>Systems that do the busywork for you</h2></div><p>Everything lives in Google tools you already have, so there is nothing new to pay for each month.</p></div>
+  <div class="svc">
+    <div class="card"><span class="ic">▦</span><h3>Business Systems</h3><p>Custom trackers, databases, reports and tools built around how your business really runs.</p></div>
+    <div class="card"><span class="ic">◎</span><h3>Custom CRM</h3><p>Client management, pipelines, calendars and dashboards so no client or follow-up slips through.</p></div>
+    <div class="card"><span class="ic">⟳</span><h3>Workflow Automation</h3><p>Connected forms, formulas, reminders and emails that cut repetitive work and missed follow-up.</p></div>
+    <div class="card"><span class="ic">▤</span><h3>Dashboards &amp; Portals</h3><p>Big, readable numbers and real charts, plus private portals for your team, students or clients.</p></div>
+  </div>
+</div></section>
+
+<style id="realLifeCss">.reallife .rl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}.reallife figure{margin:0;border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.06)}.reallife figure img{width:100%;height:240px;object-fit:cover;display:block}.reallife figcaption{padding:14px 16px;font-size:15px;color:var(--soft)}.reallife figcaption b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}#about .badges{align-self:start}.debCard{grid-column:1/-1;padding:0!important;overflow:hidden;text-align:center;background:linear-gradient(160deg,var(--tealSoft),var(--card))!important}.debCard img{width:80%;max-width:300px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;margin:22px auto 10px;display:block;border:6px solid #fff;box-shadow:0 10px 30px rgba(0,0,0,.12)}.debCard p{margin:0 0 18px;font-weight:700;color:var(--ink)}.debCard p span{display:block;font-weight:500;color:var(--soft);font-size:14px}.heroMe{display:flex;align-items:center;gap:12px;margin:18px 0 6px;font-size:15px;color:var(--soft)}.heroMe img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.15)}.heroMe b{color:var(--ink)}@media(max-width:820px){.reallife .rl-grid{grid-template-columns:1fr}}</style><section class="reallife" id="reallife"><div class="wrap"><div class="head"><div><p class="eyebrow">Made for real life</p><h2>For busy families and small businesses like yours</h2></div><p>Whether you are teaching at the kitchen table or running a business from your laptop, your system should make the day lighter, not heavier.</p></div><div class="rl-grid"><figure><img loading="lazy" src="https://images.unsplash.com/photo-1758525861699-bde56139611f?auto=format&fit=crop&w=900&q=70" alt="Mother helping her daughter with schoolwork at home"><figcaption><b>Homeschool days</b>Lessons, grades and attendance in one calm place.</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1604933762021-54a5858c9832?auto=format&fit=crop&w=900&q=70" alt="Woman running her small business from a laptop"><figcaption><b>Small business owners</b>Clients, payments and follow-ups that do not slip through.</figcaption></figure><figure><img loading="lazy" src="https://images.unsplash.com/photo-1647616906873-ba5d9b8a7b7d?auto=format&fit=crop&w=900&q=70" alt="Mother relaxing on the couch with her two children"><figcaption><b>More time for family</b>Less busywork, more of the moments that matter.</figcaption></figure></div></div></section>
+<section class="alt" id="who"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Who I help</p><h2>Built around the way you already work</h2></div><p>Every system is custom. We start with what you track by hand today and turn it into something simple you will actually use.</p></div>
+  <div class="aud">
+    <div class="card"><h3>Homeschool Families</h3><p>Lesson plans, attendance, grades and report cards for every child.</p><p class="eg">Attendance · Report cards · Curriculum</p></div>
+    <div class="card"><h3>Coaches</h3><p>Clients, sessions, progress notes, packages and payments in one hub.</p><p class="eg">Client hub · Session tracker · Billing</p></div>
+    <div class="card"><h3>Property Managers</h3><p>Applications, tenants, rent, maintenance requests and write-offs.</p><p class="eg">Rent roll · Repairs · Tax tracking</p></div>
+    <div class="card"><h3>Travel Professionals</h3><p>Leads, bookings, deposits, traveler details and trip reminders.</p><p class="eg">Booking tracker · Deposits · Itineraries</p></div>
+    <div class="card"><h3>Small Businesses</h3><p>Employees, training, schedules, budgets and day-to-day workflows.</p><p class="eg">Staff hub · Training · Budgets</p></div>
+  </div>
+  <div style="margin-top:30px"><p class="eyebrow" style="margin-bottom:12px">A system can hold</p>
+  <div class="holds"><span>Client records</span><span>Employee information</span><span>Training materials</span><span>Attendance</span><span>Report cards</span><span>Budgets</span><span>Reminders</span><span>Important links</span><span>Workflows</span><span>Forms</span><span>Dashboards</span></div></div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">How it works</p><h2>From first hello to a finished system</h2></div><p>You can watch your system come together while I build it, and you approve each stage along the way.</p></div>
+  <div class="steps">
+    <div class="step"><h3>Tell me about you</h3><p>Fill out the short intake form so I understand what you need.</p></div>
+    <div class="step"><h3>Free consultation</h3><p>We talk for 30 minutes and make sure we are a good fit.</p></div>
+    <div class="step"><h3>Proposal and agreement</h3><p>You get the scope, price and turnaround time, then sign online.</p></div>
+    <div class="step"><h3>Deposit and schedule</h3><p>Your project goes on my schedule as soon as your deposit is received.</p></div>
+    <div class="step"><h3>Watch it being built</h3><p>You get viewer access, progress updates and a chance to give feedback.</p></div>
+    <div class="step"><h3>It is all yours</h3><p>After your final payment, I transfer your system with simple instructions.</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="work"><div class="wrap"><style id="workScrollCss">#work .gal{display:flex!important;grid-template-columns:none!important;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--teal) var(--tan2)}#work .gal>figure{flex:0 0 340px;max-width:82vw;margin:0;scroll-snap-align:start;display:flex;flex-direction:column;grid-column:auto!important}#work .gal>figure img{width:100%;height:220px!important;object-fit:cover;object-position:top center;display:block}#work .gal>figure figcaption{flex:1}#work .gal::-webkit-scrollbar{height:8px}#work .gal::-webkit-scrollbar-thumb{background:var(--teal);border-radius:8px}#work .gal::-webkit-scrollbar-track{background:var(--tan2);border-radius:8px}.workNav{display:flex;justify-content:flex-end;gap:10px;margin:0 0 14px}.workNav button{width:44px;height:44px;border-radius:50%;border:2px solid var(--teal);background:#fff;color:var(--teal);font-size:20px;font-weight:800;cursor:pointer}.workNav button:hover{background:var(--teal);color:#fff}</style>
+  <div class="head"><div><p class="eyebrow">My work</p><h2>Real systems, running real homes and businesses</h2></div><p>Explore systems I built and use. The featured previews use sample data. Tap any image to see it larger.</p></div>
+  <div class="workNav"><button type="button" aria-label="Previous" onclick="document.querySelector('#work .gal').scrollBy({left:-360,behavior:'smooth'})">&#8592;</button><button type="button" aria-label="Next" onclick="document.querySelector('#work .gal').scrollBy({left:360,behavior:'smooth'})">&#8594;</button></div><div class="gal">
+    <figure class="shot feature-preview" data-zoom><img loading="lazy" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22760%22%20height%3D%22440%22%20viewBox%3D%220%200%20760%20440%22%3E%3Crect%20width%3D%22760%22%20height%3D%22440%22%20fill%3D%22%23f8f5ef%22%2F%3E%3Crect%20width%3D%22760%22%20height%3D%2292%22%20fill%3D%22%23193c70%22%2F%3E%3Cg%20font-family%3D%22Arial%22%3E%3Ctext%20x%3D%2230%22%20y%3D%2236%22%20font-size%3D%2214%22%20fill%3D%22%23ffffff%22%3ESYSTEM%20PREVIEW%20%20%2F%20%20SAMPLE%20DATA%3C%2Ftext%3E%3Ctext%20x%3D%2230%22%20y%3D%2269%22%20font-size%3D%2230%22%20font-weight%3D%22bold%22%20fill%3D%22%23ffffff%22%3EHomeschool%20Command%20Center%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23b8e8ee%22%2F%3E%3Ctext%20x%3D%2246%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3ESchool%20days%3C%2Ftext%3E%3Ctext%20x%3D%2246%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E72%20%2F%20180%3C%2Ftext%3E%3Crect%20x%3D%22268%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23e7d6ff%22%2F%3E%3Ctext%20x%3D%22284%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3EAssignments%20due%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E4%3C%2Ftext%3E%3Crect%20x%3D%22506%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23ffe39b%22%2F%3E%3Ctext%20x%3D%22522%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3EAverage%20grade%3C%2Ftext%3E%3Ctext%20x%3D%22522%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E93%25%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22236%22%20width%3D%22700%22%20height%3D%22174%22%20rx%3D%2212%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2249%22%20y%3D%22281%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EAlgebra%20%C2%B7%20Practice%20set%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22259%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23b8e8ee%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22280%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EIn%20progress%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22333%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EWorld%20History%20%C2%B7%20Reading%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22311%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23e7d6ff%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22332%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EComplete%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22385%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EPhysical%20Science%20%C2%B7%20Lab%20notes%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22363%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23ffe39b%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22384%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EHelp%20requested%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Homeschool Command Center sample dashboard"><figcaption><b>Homeschool Command Center</b>Sample preview of assignments, grades and help requests</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="hs_parent" alt="Homeschool parent dashboard with 180-day calendar, grades and alerts"><figcaption><b>Parent Dashboard</b>180-day calendar, grades by course, alerts and report cards</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="hs_student" alt="Student dashboard with days done, grade, today's work and quick links"><figcaption><b>Student Dashboard</b>Each child sees today's work, their grade and one-click links</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="ros_hub" alt="Staff systems and tools hub with quick launch buttons"><figcaption><b>Staff Systems &amp; Tools Hub</b>One launch page for clock in, job tracking, rewards and every staff form</figcaption></figure>
+    <figure class="shot feature-preview" data-zoom><img loading="lazy" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22760%22%20height%3D%22440%22%20viewBox%3D%220%200%20760%20440%22%3E%3Crect%20width%3D%22760%22%20height%3D%22440%22%20fill%3D%22%23f8f5ef%22%2F%3E%3Crect%20width%3D%22760%22%20height%3D%2292%22%20fill%3D%22%23164d49%22%2F%3E%3Cg%20font-family%3D%22Arial%22%3E%3Ctext%20x%3D%2230%22%20y%3D%2236%22%20font-size%3D%2214%22%20fill%3D%22%23ffffff%22%3ESYSTEM%20PREVIEW%20%20%2F%20%20SAMPLE%20DATA%3C%2Ftext%3E%3Ctext%20x%3D%2230%22%20y%3D%2269%22%20font-size%3D%2230%22%20font-weight%3D%22bold%22%20fill%3D%22%23ffffff%22%3ESenior%20Care%20Operations%20Hub%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23bee8dc%22%2F%3E%3Ctext%20x%3D%2246%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3ECurrent%20census%3C%2Ftext%3E%3Ctext%20x%3D%2246%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E18%3C%2Ftext%3E%3Crect%20x%3D%22268%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23f7dda4%22%2F%3E%3Ctext%20x%3D%22284%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3EOpen%20rooms%3C%2Ftext%3E%3Ctext%20x%3D%22284%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E8%3C%2Ftext%3E%3Crect%20x%3D%22506%22%20y%3D%22114%22%20width%3D%22224%22%20height%3D%22100%22%20rx%3D%2212%22%20fill%3D%22%23e3ecd0%22%2F%3E%3Ctext%20x%3D%22522%22%20y%3D%22145%22%20font-size%3D%2218%22%20fill%3D%22%23183334%22%3ENew%20referrals%3C%2Ftext%3E%3Ctext%20x%3D%22522%22%20y%3D%22185%22%20font-size%3D%2232%22%20font-weight%3D%22bold%22%20fill%3D%22%23183334%22%3E3%3C%2Ftext%3E%3Crect%20x%3D%2230%22%20y%3D%22236%22%20width%3D%22700%22%20height%3D%22174%22%20rx%3D%2212%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2249%22%20y%3D%22281%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3ERoom%20availability%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22259%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23bee8dc%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22280%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EUpdated%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22333%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EReferral%20intake%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22311%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23f7dda4%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22332%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EIn%20review%3C%2Ftext%3E%3Ctext%20x%3D%2249%22%20y%3D%22385%22%20font-size%3D%2219%22%20fill%3D%22%23183334%22%3EMonthly%20billing%3C%2Ftext%3E%3Crect%20x%3D%22535%22%20y%3D%22363%22%20width%3D%22174%22%20height%3D%2231%22%20rx%3D%2215%22%20fill%3D%22%23e3ecd0%22%2F%3E%3Ctext%20x%3D%22622%22%20y%3D%22384%22%20text-anchor%3D%22middle%22%20font-size%3D%2216%22%20fill%3D%22%23183334%22%3EReady%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Care facility operations dashboard with census and billing"><figcaption><b>Senior Care Operations Hub</b>Sample preview of census, room availability, referrals and billing</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="coach_dash" alt="Coaching and performance hub with headcount, terminations and attrition rate"><figcaption><b>Coaching &amp; Workforce Hub</b>Employee roster, coaching discussions, action plans, PIPs and live attrition and retention numbers</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="coach_guide" alt="Built-in how this system works guide"><figcaption><b>Built-In How It Works Guide</b>Every system comes with plain-language instructions: where to make changes and what updates by itself</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="ops_hub" alt="Property operations hub with workspaces for prospects, residents, rent ledger, maintenance, expenses and tax summary"><figcaption><b>Property Operations Hub</b>One click to prospects, residents, rent ledger, maintenance, invoices, past-due notices and tax summary</figcaption></figure>
+    <figure class="shot" data-zoom><img loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-img="rental" alt="Rental property management dashboard with suites, rent and maintenance"><figcaption><b>Rental Property Manager</b>Residents, open suites, rent, maintenance, invoices and tax summary</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div class="badges"><div class="card debCard"><img id="debPhoto" src="data:image/jpeg;base64,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" alt="Deborah Crutcher"><p>Deborah Crutcher<span>Homeschool mom · Founder of The CRM Contractor</span></p></div>
+    <div class="card"><b>20+</b><span>years in healthcare claims, operations and coaching</span></div>
+    <div class="card"><b>17</b><span>years of project management, data and reporting</span></div>
+    <div class="card"><b>Daily</b><span>I run a licensed care facility on systems I built</span></div>
+    <div class="card"><b>You</b><span>own your finished system, with no monthly software fees</span></div>
+  </div>
+  <div><p class="eyebrow">Meet Deborah · Where It All Started</p><h2 style="font-size:clamp(28px,3.6vw,40px);margin:8px 0 16px">A System Built at My Kitchen Table</h2>
+<p class="muted">I’m Deborah Crutcher, a homeschool mom who simply wanted to make life a little easier. I’m also the founder of <strong>The CRM Contractor</strong>. The first system I built was for my own family.</p>
+<p class="muted" style="margin-top:12px">I wanted homeschool to feel efficient for me and, as I like to say, <em>easy peasy</em> for my kids. I needed one place to keep up with assignments, attendance, grades, and report cards. My kids needed to know what to work on each day and how to ask for help when they got stuck. So I built our <strong>Homeschool Command Center</strong>.</p>
+<p class="muted" style="margin-top:12px">I gave myself a parent dashboard and gave each child a hub of their own. I added daily assignment emails, automatic report cards, and a help request form. My kids could see what was due, and I could check their progress in one place.</p>
+<p class="muted" style="margin-top:12px">When I returned to the workforce, I thought about how much time I could have saved in my own business if I’d had the right systems in place from the start. Separate tools and monthly subscriptions added up, and I still had to connect the dots myself.</p>
+<p class="muted" style="margin-top:12px">That’s why I started <strong>The CRM Contractor</strong>. Today I build custom dashboards, client trackers, forms, and automations around the way you already work. We start with what you’re juggling, what you wish you could see at a glance, and what you’re tired of doing by hand. Then I build a system that fits your business, with a one-time setup price.</p>
+<p class="muted" style="margin-top:12px">I never stopped learning. I earned my Excel Expert and Google certifications, I am working toward my CAPM, and I use AI tools responsibly to build faster. Every system is still planned, tested and checked by me, so you get something that really works for your life.</p><div class="creds"><span>Excel Expert certified</span><span>Google SQL certifications</span><span>CAPM certification in progress</span><span>Data &amp; reporting</span></div></div>
+</div></section>
+
+<section id="pricing"><div class="wrap"><div class="head"><div><p class="eyebrow">Simple, one-time pricing</p><h2>Choose the right fit for your business</h2></div><p>Every package includes planning, branding, testing and training.</p></div><div class="price-grid"><article class="card price-card"><p class="eyebrow">Custom system</p><h3>System Starter</h3><p class="package-price">$500</p><p class="muted">Typical build time 2–3 weeks</p><details><summary>What’s included</summary><ul><li>One customized system and branded dashboard</li><li>Up to 5 connected forms and 5 working tabs</li><li>Core formulas, automatic totals, logo and brand colors</li><li>Testing, one training and one revision</li><li>14 days of correction support</li></ul></details><a class="btn" href="#start" aria-label="Start intake for System Starter">Start Your Intake</a></article><article class="card price-card featured-price"><p class="eyebrow">Most popular</p><h3>Business Builder</h3><p class="package-price">$1,250</p><p class="muted">Typical build time 3–5 weeks</p><details><summary>What’s included</summary><ul><li>Everything in System Starter</li><li>Up to 12 customized tabs and 5 advanced forms</li><li>Custom CRM or property workflow, email alerts and status triggers</li><li>Document links, receipts, invoices or basic reports</li><li>Two trainings and 30 days of support</li></ul></details><a class="btn" href="#start" aria-label="Start intake for Business Builder">Start Your Intake</a></article><article class="card price-card"><p class="eyebrow">Custom system</p><h3>Operations Pro</h3><p class="package-price">From $2,500</p><p class="muted">Typical build time 5–8+ weeks</p><details><summary>What’s included</summary><ul><li>Everything in Business Builder</li><li>Up to 25 customized tabs and 10 connected forms</li><li>Advanced automation and multi-team or multi-property tracking</li><li>Custom notices, printable reports and an operations guide</li><li>Three trainings, three revisions and 60 days of support</li></ul></details><a class="btn" href="#start" aria-label="Start intake for Operations Pro">Start Your Intake</a></article></div><p class="muted" style="margin-top:20px">A 50% nonrefundable deposit reserves your project. Timing starts after the signed agreement, deposit, project details and required access are received. Your written proposal confirms the final scope and price. Major additions and custom integrations are quoted separately.</p></div><div class="head prebuilt-head"><div><p class="eyebrow">Ready-to-use systems</p><h2>Prebuilt systems</h2></div></div><div class="price-grid prebuilt-grid"><article class="card price-card"><h3>Homeschool Command Center</h3><p class="package-price">$500</p><p class="muted">Prebuilt · Fixed setup</p><details><summary>What’s included</summary><ul><li>Parent dashboard and individual student hubs</li><li>180-day calendar, attendance and attendance percentages</li><li>Assignment planner, daily checklists, gradebook and grading queue</li><li>Automated report cards, transcripts and course credit tracking</li><li>Daily assignment emails, missing-work alerts and student help requests</li></ul><p style="margin-top:8px">Sold as built. Customization is unavailable.</p></details><a class="btn sm" href="#start" aria-label="Start intake for Homeschool Command Center">Start Your Intake</a></article><article class="card price-card"><h3>Property Management System</h3><p class="package-price">$1,000</p><p class="muted">Prebuilt · Branded with your business name</p><details><summary>What’s included</summary><p>Property operations dashboard, prospect and resident tracking, open suites, rent ledger and payments, maintenance tracking, expense and tax summaries, invoices, past-due notices and document links. Includes connected forms for recording information in the system.</p><p style="margin-top:8px">Includes changing the system name to your business name.</p></details><a class="btn sm" href="#start" aria-label="Start intake for Property Management System">Start Your Intake</a></article></div></section>
+
+<section class="alt" id="reviews"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">Client reviews</p><h2>What clients are saying</h2></div><a class="btn" href="https://script.google.com/macros/s/AKfycbwN3zG2cz3SfzKl7y6UpNmg8o5lvs_zXY1-FQsiYQW87PvbvsfDhU2IftqAyW0o2nSTrQ/exec?page=review" target="_blank" rel="noopener">Leave a Review</a></div>
+  <div class="revs" id="revs"><div class="card rev"><div class="stars" aria-label="5 stars">★★★★★</div><p class="t">My travel agent management system keeps my customers, trips, reminders and important links organized in one place. I was paying over $65 a month for a CRM, and now I pay less.</p><p class="who">Kinsley L.<span>Travel professional · System Starter</span></p></div></div>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+  <p class="eyebrow">Questions</p>
+  <h2 style="font-size:clamp(26px,3.4vw,38px);margin:8px 0 20px">Frequently asked questions</h2>
+  <div class="faq">
+    <details open><summary>What kind of systems do you build?</summary><p>Anything you keep track of by hand or across too many places: client records, schedules, attendance, report cards, budgets, employee information, training, rent and maintenance, payments, reminders and dashboards. If you track it, I can organize it.</p></details>
+    <details><summary>Do I need to be good with spreadsheets or technology?</summary><p>Not at all. I build it so you and your team only click buttons and fill in simple forms. You also get instructions and a walkthrough when your system is delivered.</p></details>
+    <details><summary>Will I have to pay a monthly fee?</summary><p>No. Your system runs in your own free Google account, and once it is paid in full it is yours. There are no subscriptions or per-user charges.</p></details>
+    <details><summary>How much does a custom system cost?</summary><p>Every system is priced by its scope. After your free consultation you receive a written proposal with the exact price, what is included, what is not, and the turnaround time, before you commit to anything.</p></details>
+    <details><summary>How long does a build take?</summary><p>It depends on the size of the system. Your estimated turnaround is in your proposal, and your start date and estimated completion date are set as soon as your deposit is received.</p></details>
+    <details><summary>How does payment work?</summary><p>A deposit is due when you sign your agreement, and the remaining balance is due when you approve the finished system. I accept Cash App and Zelle.</p></details>
+    <details><summary>Can I see my system while it is being built?</summary><p>Yes. You get viewer access, dated progress updates and a private client portal where you approve each stage or ask for changes. Viewing does not transfer ownership. Your system is transferred to you after final payment.</p></details>
+    <details><summary>What if I want changes?</summary><p>Changes inside your agreed scope are included. If you ask for something outside the scope, you will see the added cost and any change to the timeline first, and nothing happens until you approve it.</p></details>
+    <details><summary>Can you improve a system I already have?</summary><p>Yes. Bring what you are using now, whether that is paper, spreadsheets or an app, and we will talk about whether to improve it or start fresh.</p></details>
+    <details><summary>Is my information kept private?</summary><p>Your system lives in your own Google account. Work samples are only shown with names and private details removed, and client reviews never show an email address.</p></details>
+  </div>
+</div></section>
+
+<section class="alt" id="policy"><div class="wrap" style="max-width:860px">
+  <p class="eyebrow">Payment and cancellation policy</p>
+  <h2 style="font-size:clamp(26px,3.4vw,36px);margin:8px 0 16px">Clear expectations from the start</h2>
+  <div class="policy" id="policyText" style="font-size:16px"></div>
+  <p class="muted small" style="margin-top:12px">During the build you can watch your system as it comes together. Viewer access does not transfer ownership. Your finished system is transferred to you after final payment.</p>
+</div></section>
+
+<section id="start"><div class="wrap start">
+  <div>
+    <p class="eyebrow">Start your project</p>
+    <h2 style="font-size:clamp(28px,3.8vw,42px);margin:8px 0 14px">Tell me what you need</h2>
+    <p class="muted">Fill out this short intake form. Next, you will pick a time for your free 30-minute consultation, and you will get your own private client portal to follow along.</p>
+    <style id="startCss">#start .start{display:flex!important;flex-direction:column;max-width:860px;margin:0 auto;gap:18px}#start .start>div:first-child{display:contents}#start .start h2,#start .start .eyebrow,#start .start>div:first-child>p.muted{text-align:center}#start .start>div:first-child>p.muted{max-width:620px;margin:0 auto}#start .qBox{order:5;align-self:stretch!important;width:100%!important;max-width:none!important;grid-column:1/-1;box-sizing:border-box;margin-top:4px!important;padding:0!important;overflow:hidden}#start .qBox summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center}#start .qBox summary::-webkit-details-marker{display:none}#start .qBox summary span{color:var(--teal);font-weight:800}#start .qBox[open] summary span{transform:rotate(45deg)}#start .qBox form{padding:0 22px 22px;margin-top:0!important}</style><details class="card qBox" style="margin-top:22px"><summary>Just have a quick question? Send me a note instead <span>+</span></summary>
+      <form id="qForm" class="form" style="margin-top:12px">
+        <label class="f">Name<input id="q_name" required autocomplete="name"></label>
+        <label class="f">Email<input id="q_email" type="email" required autocomplete="email"></label>
+        <label class="f">Your question<textarea id="q_message" required></textarea></label>
+        <button class="btn ghost" type="submit">Send Question</button>
+        <p id="qDone" class="muted small" hidden>Thank you! I will get back to you soon.</p>
+      </form></details>
+    <p class="muted small" style="margin-top:16px" id="contactLine"></p>
+  </div>
+  <div class="card" style="padding:24px">
+    <form id="intake" class="form">
+      <div class="two"><label class="f">Your name *<input id="name" required autocomplete="name"></label><label class="f">Business or family name<input id="business"></label></div>
+      <div class="two"><label class="f">Email *<input id="email" type="email" required autocomplete="email"></label><label class="f">Phone<input id="phone" type="tel" autocomplete="tel"></label></div>
+      <div class="two"><label class="f">I am a...<select id="industry"></select></label><label class="f">Service you are interested in<select id="service"></select></label></div>
+      <label class="f">What would you like your system to organize? *<textarea id="organize" required placeholder="For example: client records, attendance, budgets, reminders..."></textarea></label>
+      <div class="two"><label class="f">Who will use it?<input id="users" placeholder="Just me, my family, a team of 5..."></label><label class="f">What do you use now?<input id="tools" placeholder="Paper, spreadsheets, an app..."></label></div>
+      <div><p class="small" style="font-weight:700;color:var(--soft);margin-bottom:8px">Features you would like</p>
+        <div class="feat" id="feats"></div></div>
+      <div class="two"><label class="f">Budget range<select id="budget"><option>Not sure yet</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $2,500</option><option>$2,500 to $5,000</option><option>$5,000 or more</option></select></label>
+      <label class="f">Timeline<select id="timeline"><option>As soon as possible</option><option>Within 30 days</option><option>1 to 3 months</option><option>Just exploring</option></select></label></div>
+      <label class="f">How did you hear about me?<select id="source"><option>Referral</option><option>Facebook</option><option>Instagram</option><option>Google</option><option>Event</option><option>Other</option></select></label>
+      <div class="policy"><b>Payment and Cancellation Policy</b><p style="margin-top:6px" id="policyIntake"></p>
+        <label class="check" style="margin-top:12px"><input type="checkbox" id="policy"> I have read and accept the Payment and Cancellation Policy.</label></div>
+      <button class="btn" type="submit" id="submitBtn">Submit My Intake Form</button>
+      <p id="err" class="small" style="color:var(--roseInk);font-weight:700" hidden></p>
+    </form>
+    <div id="thanks" class="done" hidden>
+      <h3>Thank you! Your intake form is in.</h3>
+      <p class="muted" style="margin-top:8px">Check your email for a welcome note. Your next step is to book your free 30-minute consultation.</p>
+      <div class="row" style="margin-top:16px"><a class="btn" id="bookBtn" target="_blank" rel="noopener" href="#">Book My Free Consultation</a><a class="btn ghost" id="portalBtn" target="_blank" rel="noopener" href="#">Open My Client Portal</a></div>
+    </div>
+  </div>
+</div></section>
+
+<script>document.querySelectorAll("img[data-deb]").forEach(function(i){var d=document.getElementById("debPhoto");if(d)i.src=d.src});</script><footer><div class="wrap row between">
+  <span>© 2026 The CRM Contractor</span><span id="footContact"></span>
+</div></footer>
+
+<script>
+var FEATURES = ['Client records', 'Employee information', 'Training materials', 'Attendance', 'Report cards', 'Budgets', 'Reminders and alerts', 'Important links', 'Forms', 'Dashboard with charts', 'Payments and invoices', 'Scheduling'];
+function el(id) { return document.getElementById(id); }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+el('feats').innerHTML = FEATURES.map(function (f, i) { return '<label><input type="checkbox" value="' + esc(f) + '" id="ft' + i + '"> ' + esc(f) + '</label>'; }).join('');
+google.script.run.withSuccessHandler(function (r) {
+  var s = r.settings;
+  el('industry').innerHTML = s.industries.map(function (x) { return '<option>' + esc(x) + '</option>'; }).join('');
+  el('service').innerHTML = s.services.map(function (x) { return '<option>' + esc(x) + '</option>'; }).join('');
+  el('policyText').textContent = s.policy;
+  el('policyIntake').textContent = s.policy;
+  if (s.booking) { el('heroBook').href = s.booking; }
+  var contact = (s.email || '').trim();
+  ['contactLine', 'footContact'].forEach(function (id) {
+    var target = el(id);
+    target.textContent = contact && id === 'contactLine' ? 'Prefer to email directly? ' : '';
+    if (!contact) return;
+    var link = document.createElement('a');
+    link.href = 'mailto:' + contact;
+    link.textContent = contact;
+    target.appendChild(link);
+  });
+  if (r.reviews.length) {
+    el('revs').innerHTML += r.reviews.map(function (v) {
+      return '<div class="card rev"><div class="stars" aria-label="' + v.stars + ' stars">' + '★★★★★'.slice(0, v.stars) + '<span style="color:var(--tan)">' + '★★★★★'.slice(v.stars) + '</span></div><p class="t">' + esc(v.text) + '</p><p class="who">' + esc(v.name) + (v.business ? '<span>' + esc(v.business) + '</span>' : '') + '</p></div>';
+    }).join('');
+  }
+}).publicApi('site');
+el('intake').addEventListener('submit', function (e) {
+  e.preventDefault();
+  el('err').hidden = true;
+  var feats = [];
+  document.querySelectorAll('#feats input:checked').forEach(function (c) { feats.push(c.value); });
+  var d = { name: el('name').value, business: el('business').value, email: el('email').value, phone: el('phone').value, industry: el('industry').value, service: el('service').value, organize: el('organize').value, users: el('users').value, tools: el('tools').value, features: feats.join(', '), budget: el('budget').value, timeline: el('timeline').value, source: el('source').value, policy: el('policy').checked };
+  if (!d.policy) { el('err').textContent = 'Please check the box to accept the Payment and Cancellation Policy.'; el('err').hidden = false; return; }
+  el('submitBtn').disabled = true; el('submitBtn').textContent = 'Sending...';
+  google.script.run.withSuccessHandler(function (r) {
+    el('intake').hidden = true; el('thanks').hidden = false;
+    if (r.booking) el('bookBtn').href = r.booking; else el('bookBtn').hidden = true;
+    el('portalBtn').href = r.portal;
+    el('thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }).withFailureHandler(function (er) {
+    el('err').textContent = er.message; el('err').hidden = false;
+    el('submitBtn').disabled = false; el('submitBtn').textContent = 'Submit My Intake Form';
+  }).publicApi('intake', d);
+});
+document.querySelectorAll('[data-zoom]').forEach(function (f) { f.addEventListener('click', function () { var z = document.createElement('div'); z.className = 'zoom'; z.innerHTML = '<img src="' + f.querySelector('img').src + '" alt="">'; z.onclick = function () { z.remove(); }; document.body.appendChild(z); }); });
+el('qForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  google.script.run.withSuccessHandler(function () { el('qForm').reset(); el('qDone').hidden = false; }).withFailureHandler(function (er) { alert(er.message); })
+    .publicApi('question', { name: el('q_name').value, email: el('q_email').value, message: el('q_message').value });
+});
+</script>
+<script>fetch(CRM_API+"?page=api&action=images").then(function(r){return r.json()}).then(function(o){var m=(o&&o.images)||{};document.querySelectorAll("img[data-img]").forEach(function(i){var k=i.getAttribute("data-img");if(m[k])i.src=m[k]})}).catch(function(){});</script>
+</body>
+</html>
