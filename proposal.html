@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your Proposal | The CRM Contractor</title>
+<style>
+body{margin:0;background:#FFF7EF;color:#2F2B26;font-family:"Nunito Sans","Segoe UI",system-ui,sans-serif}
+.pp-load{max-width:640px;margin:0 auto;padding:80px 20px;text-align:center}
+.pp-spin{width:42px;height:42px;border-radius:50%;border:4px solid #e2dbcf;border-top-color:#1f5f55;margin:0 auto 18px;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.pp-spin{animation:none}}
+</style>
+</head>
+<body>
+<div id="app"><div class="pp-load"><div class="pp-spin"></div><p>Loading your proposal...</p></div></div>
+<script>
+var API = 'https://script.google.com/macros/s/AKfycbwN3zG2cz3SfzKl7y6UpNmg8o5lvs_zXY1-FQsiYQW87PvbvsfDhU2IftqAyW0o2nSTrQ/exec';
+var A = null;
+function el(id) { return document.getElementById(id); }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function fail(t) { el('app').innerHTML = '<div class="pp-load"><h1 style="font-family:Georgia,serif">We couldn’t open your proposal</h1><p>' + esc(t) + '</p></div>'; }
+function token() { var m = /[?&]t=([A-Za-z0-9]+)/.exec(location.search); return m ? m[1] : ''; }
+function post(body) {
+  return fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(function (r) { return r.json(); }).then(function (r) { if (!r.ok) throw new Error(r.error || 'Something went wrong. Please try again.'); return r.result; });
+}
+function render(done) {
+  var h;
+  if (A.signed || done) {
+    h = '<div class="card pp-card pp-done"><p class="eyebrow">Accepted and signed</p><h2>You’re all set' + (A.signedName ? ', ' + esc(A.signedName) : '') + '!</h2><p>Thank you for trusting me with your project. Here’s what happens next:</p><ol class="pp-steps"><li><b>Pay your ' + esc(A.deposit) + ' deposit</b> to reserve your spot.<pre class="pay">' + esc(A.howToPay) + '</pre></li><li><b>I confirm your deposit</b> and put you on the schedule.</li><li><b>Watch for your viewer access link</b> so you can see your system come together.</li></ol><p class="muted small">A copy of your signed agreement is saved. Questions? Email ' + esc(A.email) + '.</p></div>';
+  } else {
+    h = '<div class="card pp-card"><p class="eyebrow">Last step</p><h2>Accept and sign your proposal</h2><p class="muted">Please read the policy below, then follow the three quick steps.</p><div class="pp-policy"><b>Payment and Cancellation Policy</b><p>' + esc(A.policy) + '</p><p class="small muted">' + esc(A.viewerNote) + '</p></div>' +
+      '<div class="pp-step"><span>1</span><label class="f">Type your full name<input id="nm" autocomplete="name"></label></div>' +
+      '<label class="check pp-chk"><input type="checkbox" id="ok"> I have reviewed this proposal and accept the Payment and Cancellation Policy, scope, price and turnaround.</label>' +
+      '<div class="pp-step"><span>2</span><div><button class="btn ghost" id="cb" type="button">Email me my 6-digit code</button><p class="small muted" style="margin-top:6px">For your security, the code goes to the email address on file.</p></div></div>' +
+      '<div class="pp-step" id="codeWrap" hidden><span>3</span><div><label class="f">Enter your 6-digit code<input id="sc" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></label><button class="btn pp-go" id="sb" type="button">Accept &amp; Sign</button></div></div>' +
+      '<p id="err" class="small pp-err" hidden></p><p class="small muted" style="margin-top:14px">Questions or changes? Just reply to the proposal email.</p></div>';
+  }
+  el('act').innerHTML = h;
+  if (el('cb')) el('cb').onclick = sendCode;
+  if (el('sb')) el('sb').onclick = accept;
+}
+function msg(t, good) { var e = el('err'); e.textContent = t; e.style.color = good ? '#1f5f55' : '#A63D2F'; e.hidden = false; }
+function sendCode() {
+  var b = el('cb'); b.disabled = true; b.textContent = 'Sending...'; el('err').hidden = true;
+  post({ proposalAction: 'code', token: A.token }).then(function (r) {
+    b.disabled = false; b.textContent = 'Send a new code'; el('codeWrap').hidden = false; msg('We sent your code to ' + r.to + '. It works for 15 minutes.', true); el('sc').focus();
+  }).catch(function (e) { b.disabled = false; b.textContent = 'Email me my 6-digit code'; msg(e.message); });
+}
+function accept() {
+  var n = el('nm').value.trim(), ok = el('ok').checked, cd = el('sc').value.trim();
+  if (!n) return msg('Please type your full name.');
+  if (!ok) return msg('Please check the box to accept the policy.');
+  if (cd.length !== 6) return msg('Please enter the 6-digit code we emailed you.');
+  var b = el('sb'); b.disabled = true; b.textContent = 'Signing...';
+  post({ proposalAction: 'sign', token: A.token, name: n, policy: true, code: cd }).then(function () {
+    A.signed = true; A.signedName = n; render(true); el('act').scrollIntoView({ behavior: 'smooth' });
+  }).catch(function (e) { b.disabled = false; b.textContent = 'Accept & Sign'; msg(e.message); });
+}
+(function start() {
+  var t = token();
+  if (!t) return fail('This link is missing its proposal code. Please use the button in your email.');
+  fetch(API + '?page=proposalData&t=' + encodeURIComponent(t)).then(function (r) { return r.json(); }).then(function (r) {
+    if (!r.ok) return fail(r.error || 'This proposal link is not valid.');
+    A = r.data;
+    el('app').innerHTML = r.css + r.body;
+    render();
+  }).catch(function () { fail('Please check your connection and refresh this page.'); });
+})();
+</script>
+</body>
+</html>
